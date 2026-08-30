@@ -1,0 +1,32 @@
+PredictionArbitrage - does a prediction-market edge survive execution?
+Copyright 2026 Leo Y. Zhang
+
+This product includes software developed by Leo Y. Zhang.
+
+Proprietary and source-available for evaluation only. No reuse rights are
+granted. See LICENSE for the full terms.
+
+The third-party section below is retained deliberately: those dependencies keep
+their own licences, which are unaffected by the terms covering this work itself.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY DEPENDENCIES
+--------------------------------------------------------------------------------
+
+This project does not bundle or redistribute any third-party code.
+Dependencies are installed from PyPI by the user.
+
+Core (required):
+  none - Python standard library only
+
+Optional extras:
+  [dev] ruff   MIT
+
+--------------------------------------------------------------------------------
+DATA
+--------------------------------------------------------------------------------
+
+Market metadata and order books are read from Polymarket's public Gamma
+and CLOB endpoints at request time and cached locally. No market data is
+redistributed: results.json holds aggregate statistics only.
+

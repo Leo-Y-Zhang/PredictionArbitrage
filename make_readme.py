@@ -23,7 +23,7 @@ def count_tests():
 res = json.load(open(os.path.join(HERE, "results.json"), encoding="utf-8"))
 d = res["pair_sum_distribution"]
 if not d:
-    sys.exit("results.json has no pair-sum distribution; run scan.py first")
+    sys.exit("results.json has no pair-sum distribution; run `predarb scan` first")
 
 V = {
     "asof": res["asof"][:10],

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary
 """Fees, sizing, and whether an apparent arbitrage survives execution.
 
 The gross edge on a prediction-market arbitrage is a subtraction anyone can do.
@@ -9,7 +10,6 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
-
 
 # ---------------------------------------------------------------- fees
 

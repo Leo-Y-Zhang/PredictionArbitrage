@@ -1,31 +1,30 @@
 {
- "asof": "2026-08-30T03:33:15",
+ "asof": "2026-08-30T06:00:42",
  "venue": "polymarket",
  "params": {
-  "limit": 200,
+  "limit": 60,
   "min_liquidity": 500.0,
   "max_shares": 1000.0,
   "gas": 0.02,
   "fee_rate": 0.0,
-  "min_profit": 0.01,
-  "refresh": false
+  "min_profit": 0.01
  },
- "n_markets": 200,
- "n_scanned": 200,
+ "n_markets": 60,
+ "n_scanned": 60,
  "n_book_failures": 0,
  "n_gross_edges": 0,
  "n_executable": 0,
  "survival_rate": null,
  "pair_sum_distribution": {
-  "n": 140,
+  "n": 51,
   "min": 1.001,
+  "max": 1.002,
   "p05": 1.001,
   "median": 1.001,
-  "mean": 1.001885714285714,
-  "max": 1.01,
+  "mean": 1.001019607843137,
   "n_below_1": 0,
-  "n_within_1c_of_1": 127,
-  "n_within_2c_of_1": 140
+  "n_within_1c_of_1": 51,
+  "n_within_2c_of_1": 51
  },
  "opportunities": []
 }

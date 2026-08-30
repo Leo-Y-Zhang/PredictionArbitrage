@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary
 """Tests built on hand-computable order books.
 
 Every fixture here has an answer that can be worked out on paper, so a failure
@@ -13,10 +14,15 @@ import unittest
 sys.path.insert(0, os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 
-from predarb.book import Level, OrderBook          # noqa: E402
-from predarb.arb import (                          # noqa: E402
-    kalshi_fee, polymarket_fee, kelly_fraction, kelly_for_binary_contract,
-    within_venue_arbitrage, cross_venue_edge)
+from predarb.arb import (  # noqa: E402
+    cross_venue_edge,
+    kalshi_fee,
+    kelly_for_binary_contract,
+    kelly_fraction,
+    polymarket_fee,
+    within_venue_arbitrage,
+)
+from predarb.book import Level, OrderBook  # noqa: E402
 
 
 def book(bids, asks):

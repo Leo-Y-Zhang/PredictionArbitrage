@@ -1,5 +1,11 @@
 # PredictionArbitrage
 
+[![CI](https://github.com/Leo-Y-Zhang/PredictionArbitrage/actions/workflows/ci.yml/badge.svg)](https://github.com/Leo-Y-Zhang/PredictionArbitrage/actions/workflows/ci.yml)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
+![tests](https://img.shields.io/badge/tests-<<n_tests>>-brightgreen)
+![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
+![licence](https://img.shields.io/badge/licence-proprietary%20source--available-lightgrey)
+
 Detecting an arbitrage in a prediction market is a subtraction. If the YES and
 NO asks of the same contract sum below a dollar, buying both guarantees a dollar
 at resolution:
@@ -67,9 +73,13 @@ on four things it also computes:
 Requires only the Python standard library to scan; tests need nothing extra.
 
 ```
-python scan.py --limit 200            # cached books
-python scan.py --limit 200 --refresh  # pull fresh books from the CLOB
-python -m unittest discover -s tests -v
+pip install -e .
+
+predarb scan --limit 200        # cached books
+predarb scan --refresh          # pull fresh books from the CLOB
+predarb price 0.45 0.50         # cost a hypothetical pair, offline
+predarb book <token-id>         # one book, best price first
+predarb verify                  # offline suite
 ```
 
 Market metadata comes from Polymarket's Gamma API and depth from the CLOB
@@ -105,7 +115,9 @@ always upward, so it silently overstated costs on every round number.
 | `src/predarb/book.py` | order book, best quotes, walking the book, slippage |
 | `src/predarb/arb.py` | fee models, Kelly, the costed arbitrage check |
 | `src/predarb/polymarket.py` | Gamma market list and CLOB depth, cached |
-| `scan.py` | live scan, writes `results.json` |
+| `src/predarb/scanner.py` | the scan and the pair-sum distribution |
+| `src/predarb/__main__.py` | CLI |
+| `scripts/check_spdx.py` | one-line licence header check, enforced in CI |
 | `make_readme.py` | renders this file from `results.json` |
 
 ## Limits

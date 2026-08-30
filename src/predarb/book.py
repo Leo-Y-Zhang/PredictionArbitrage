@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary
 """Order books, and what it actually costs to trade against one.
 
 The detection half of an arbitrage is a subtraction. The execution half is this
@@ -28,8 +29,8 @@ class OrderBook:
     asks: list[Level] = field(default_factory=list)
 
     def __post_init__(self):
-        self.bids = sorted(self.bids, key=lambda l: -l.price)
-        self.asks = sorted(self.asks, key=lambda l: l.price)
+        self.bids = sorted(self.bids, key=lambda lv: -lv.price)
+        self.asks = sorted(self.asks, key=lambda lv: lv.price)
 
     @classmethod
     def from_payload(cls, payload):
@@ -70,16 +71,16 @@ class OrderBook:
         raw mid misleading; this is the p-bar of the brief.
         """
         rows = self.bids[:depth] + self.asks[:depth]
-        total = sum(l.size for l in rows)
+        total = sum(lv.size for lv in rows)
         if total <= 0:
             return None
-        return sum(l.price * l.size for l in rows) / total
+        return sum(lv.price * lv.size for lv in rows) / total
 
     def ask_depth(self):
-        return sum(l.size for l in self.asks)
+        return sum(lv.size for lv in self.asks)
 
     def bid_depth(self):
-        return sum(l.size for l in self.bids)
+        return sum(lv.size for lv in self.bids)
 
     def walk_asks(self, shares):
         """Buy ``shares`` by consuming asks. Returns (filled, cost, avg_price).
@@ -122,4 +123,4 @@ class OrderBook:
 
     def max_size_within(self, limit_price):
         """Shares buyable without paying more than ``limit_price`` per share."""
-        return sum(l.size for l in self.asks if l.price <= limit_price)
+        return sum(lv.size for lv in self.asks if lv.price <= limit_price)

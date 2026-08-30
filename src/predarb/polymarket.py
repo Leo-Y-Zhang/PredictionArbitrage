@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary
 """Polymarket data access: market list from Gamma, order books from the CLOB."""
 from __future__ import annotations
 
@@ -40,7 +41,7 @@ def active_markets(limit=500, min_liquidity=500.0, use_cache=True):
     os.makedirs(CACHE_DIR, exist_ok=True)
     path = os.path.join(CACHE_DIR, f"markets_{limit}_{int(min_liquidity)}.json")
     if use_cache and os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, encoding="utf-8") as fh:
             return json.load(fh)
 
     out, offset = [], 0
@@ -85,7 +86,7 @@ def order_book(token_id, use_cache=True):
     os.makedirs(CACHE_DIR, exist_ok=True)
     path = os.path.join(CACHE_DIR, f"book_{token_id[:24]}.json")
     if use_cache and os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, encoding="utf-8") as fh:
             return json.load(fh)
     data = _get(f"{CLOB_BOOK}?token_id={token_id}")
     with open(path, "w", encoding="utf-8") as fh:
