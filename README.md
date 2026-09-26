@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Leo-Y-Zhang/PredictionArbitrage/actions/workflows/ci.yml/badge.svg)](https://github.com/Leo-Y-Zhang/PredictionArbitrage/actions/workflows/ci.yml)
 ![python](https://img.shields.io/badge/python-3.11%2B-blue)
-![tests](https://img.shields.io/badge/tests-35-brightgreen)
+![tests](https://img.shields.io/badge/tests-39-brightgreen)
 ![dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 ![licence](https://img.shields.io/badge/licence-proprietary%20source--available-lightgrey)
 
@@ -87,7 +87,7 @@ Market metadata comes from Polymarket's Gamma API and depth from the CLOB
 
 ## Tests
 
-35 tests, all offline, every fixture hand-computable.
+39 tests, all offline, every fixture hand-computable.
 
 The one worth naming guards a trap: **Polymarket returns asks in descending
 order**, so reading the first element as the best price quotes the *worst* offer

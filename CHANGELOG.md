@@ -19,6 +19,12 @@ repository's documents are meant not to do.
 
 ### Fixed
 
+- **Floating-point comparisons at the boundaries.** `1.01 - 1.0` evaluates to
+  0.010000000000000009, so every pair exactly one cent from 1 fell outside the
+  "within one cent" bucket (and two cents out, the two-cent bucket). The same
+  problem rejected trades whose profit was exactly `min_profit`. Both
+  comparisons now round to well below a tick first. The published scan, whose
+  pair sums are 1.001-1.002, is unaffected.
 - **Kalshi fee rounding.** `0.07 * 100 * 0.5 * 0.5` evaluates to
   1.7500000000000002 in binary floating point, so taking the ceiling without
   rounding first billed 1.76 for a fee that is exactly 1.75. The error was
