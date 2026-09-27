@@ -133,7 +133,10 @@ def within_venue_arbitrage(yes_book, no_book, venue="polymarket",
     profit = payout - cost - fees - gas
     net_edge = profit / shares if shares > 0 else float("nan")
 
-    executable = profit >= min_profit
+    # Rounded for the same reason as the Kalshi fee: prices, fees and gas are
+    # decimal amounts, and a profit of exactly min_profit otherwise comes out
+    # as 0.009999999999999804 and is rejected.
+    executable = round(profit, 9) >= min_profit
     reason = "" if executable else (
         "gross edge negative" if gross <= 0 else
         "costs exceed the edge")

@@ -23,6 +23,7 @@ from predarb.arb import (  # noqa: E402
     within_venue_arbitrage,
 )
 from predarb.book import Level, OrderBook  # noqa: E402
+from predarb.scanner import pair_sum_stats  # noqa: E402
 
 
 def book(bids, asks):
@@ -217,9 +218,6 @@ class TestCrossVenue(unittest.TestCase):
         self.assertAlmostEqual(cross_venue_edge(0.60, 0.40), 0.0)
 
 
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
-
 
 class TestEndToEndFromVenuePayload(unittest.TestCase):
     """A null result is only worth reading if the pipeline can find a positive.
@@ -255,3 +253,47 @@ class TestEndToEndFromVenuePayload(unittest.TestCase):
         r = within_venue_arbitrage(yes, no, max_shares=1000, gas=0.02)
         self.assertAlmostEqual(r.gross_edge, -0.001, places=9)
         self.assertFalse(r.executable)
+
+
+class TestBinaryFloatingPointAtTheBoundaries(unittest.TestCase):
+    """Prices are decimal ticks; binary floating point is not. The fee already
+    rounds before its ceiling for this reason, and so must the comparisons."""
+
+    def test_a_profit_of_exactly_the_minimum_is_executable(self):
+        # 3 contracts at 0.02 + 0.97 cost 2.97 for a payout of 3.00; the Kalshi
+        # fees are 1 cent per leg, leaving exactly 0.01. Unrounded, the profit
+        # came out as 0.009999999999999804 and the trade was rejected.
+        yes = book([], [(0.02, 3)])
+        no = book([], [(0.97, 3)])
+        r = within_venue_arbitrage(yes, no, venue="kalshi", max_shares=3,
+                                   min_profit=0.01)
+        self.assertAlmostEqual(r.fees, 0.02)
+        self.assertAlmostEqual(r.profit, 0.01, places=12)
+        self.assertTrue(r.executable)
+
+    def test_a_profit_below_the_minimum_is_still_rejected(self):
+        yes = book([], [(0.02, 3)])
+        no = book([], [(0.97, 3)])
+        r = within_venue_arbitrage(yes, no, venue="kalshi", max_shares=3,
+                                   gas=0.001, min_profit=0.01)
+        self.assertFalse(r.executable)
+
+    def test_one_cent_either_side_of_one_counts_as_within_one_cent(self):
+        # 1.01 - 1.0 evaluates to 0.010000000000000009 and 0.99 - 1.0 to
+        # -0.010000000000000009, so every pair exactly one cent from 1 fell
+        # outside the one-cent bucket (and two cents out, the two-cent one).
+        sums = [0.30 + 0.71, 0.41 + 0.60, 0.29 + 0.70, 0.49 + 0.53, 0.48 + 0.50]
+        got = pair_sum_stats(sums)
+        self.assertEqual(got["n_within_1c_of_1"], 3)
+        self.assertEqual(got["n_within_2c_of_1"], 5)
+        self.assertEqual(got["n_below_1"], 2)
+
+    def test_a_pair_summing_to_exactly_one_is_not_below_one(self):
+        sums = [a / 100 + (100 - a) / 100 for a in range(1, 100)]
+        got = pair_sum_stats(sums)
+        self.assertEqual(got["n_below_1"], 0)
+        self.assertEqual(got["n_within_1c_of_1"], 99)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

@@ -21,13 +21,17 @@ def pair_sum_stats(sums: list[float]) -> dict | None:
     if not sums:
         return None
     s = sorted(sums)
+    # Distance from 1 rounded to well below a tick: 1.01 - 1.0 evaluates to
+    # 0.010000000000000009, which put every pair exactly one cent wide outside
+    # the one-cent bucket.
+    gap = [round(v - 1.0, 9) for v in s]
     return {
         "n": len(s), "min": s[0], "max": s[-1],
         "p05": s[max(0, int(0.05 * len(s)) - 1)],
         "median": statistics.median(s), "mean": statistics.fmean(s),
-        "n_below_1": sum(1 for v in s if v < 1.0),
-        "n_within_1c_of_1": sum(1 for v in s if abs(v - 1.0) <= 0.01),
-        "n_within_2c_of_1": sum(1 for v in s if abs(v - 1.0) <= 0.02),
+        "n_below_1": sum(1 for g in gap if g < 0),
+        "n_within_1c_of_1": sum(1 for g in gap if abs(g) <= 0.01),
+        "n_within_2c_of_1": sum(1 for g in gap if abs(g) <= 0.02),
     }
 
 
