@@ -1,0 +1,1231 @@
+{
+  "before": [
+    {
+      "module": "src/predarb/arb.py",
+      "id": "negative-contract-fee",
+      "line": 22,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "zero-contract-boundary",
+      "line": 22,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "fee-round-down",
+      "line": 29,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fee_rounds_up_to_the_cent (test_arb.TestFees.test_kalshi_fee_rounds_up_to_the_cent)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "fee-no-decimal-rounding",
+      "line": 29,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_kalshi_fee_matches_the_published_formula (test_arb.TestFees.test_kalshi_fee_matches_the_published_formula)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-zero-odds",
+      "line": 51,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-negative-odds",
+      "line": 51,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-wrong-odds",
+      "line": 64,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_underpriced_contract_gets_a_positive_stake (test_arb.TestKelly.test_underpriced_contract_gets_a_positive_stake)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "missing-leg-and",
+      "line": 102,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "ERROR: test_missing_side_is_reported_not_crashed (test_arb.TestWithinVenueArbitrage.test_missing_side_is_reported_not_crashed)",
+        "FAILED (errors=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "ignore-size-cap",
+      "line": 108,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "max-depth",
+      "line": 108,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "zero-depth-boundary",
+      "line": 109,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "ignore-fee-rate",
+      "line": 126,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "omit-no-leg-fee",
+      "line": 128,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fees_are_applied (test_arb.TestWithinVenueArbitrage.test_kalshi_fees_are_applied)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "add-fees-to-profit",
+      "line": 133,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fees_are_applied (test_arb.TestWithinVenueArbitrage.test_kalshi_fees_are_applied)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "omit-gas",
+      "line": 133,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_gas_can_eat_the_whole_edge (test_arb.TestWithinVenueArbitrage.test_gas_can_eat_the_whole_edge)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "profit-strict-boundary",
+      "line": 139,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "accept-all-results",
+      "line": 139,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_market_priced_one_tick_wide_is_not_an_arbitrage (test_arb.TestEndToEndFromVenuePayload.test_a_market_priced_one_tick_wide_is_not_an_arbitrage)",
+        "FAIL: test_gas_can_eat_the_whole_edge (test_arb.TestWithinVenueArbitrage.test_gas_can_eat_the_whole_edge)",
+        "FAIL: test_no_arbitrage_when_the_pair_costs_more_than_one (test_arb.TestWithinVenueArbitrage.test_no_arbitrage_when_the_pair_costs_more_than_one)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=5)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "net-edge-multiplied",
+      "line": 134,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "slippage-no-leg-subtracted",
+      "line": 132,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "reverse-asks",
+      "line": 33,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_asks_are_sorted_best_first_whatever_the_input_order (test_arb.TestOrderBookOrdering.test_asks_are_sorted_best_first_whatever_the_input_order)",
+        "FAIL: test_fill_across_levels_is_a_weighted_average (test_arb.TestWalkingTheBook.test_fill_across_levels_is_a_weighted_average)",
+        "FAIL: test_fill_inside_the_top_level_pays_the_top_price (test_arb.TestWalkingTheBook.test_fill_inside_the_top_level_pays_the_top_price)",
+        "FAIL: test_slippage_is_average_minus_best (test_arb.TestWalkingTheBook.test_slippage_is_average_minus_best)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=6)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "accept-negative-size",
+      "line": 42,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "accept-zero-size",
+      "line": 42,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_zero_size_levels_are_dropped (test_arb.TestOrderBookOrdering.test_zero_size_levels_are_dropped)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "price-used-as-size",
+      "line": 41,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_zero_size_levels_are_dropped (test_arb.TestOrderBookOrdering.test_zero_size_levels_are_dropped)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "missing-size-default",
+      "line": 41,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "spread-added",
+      "line": 59,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "mid-subtracted",
+      "line": 65,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_liquidity_weighted_mid_leans_to_the_deep_side (test_arb.TestWalkingTheBook.test_liquidity_weighted_mid_leans_to_the_deep_side)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "one-sided-spread",
+      "line": 56,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "weighted-depth-off-by-one",
+      "line": 73,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "empty-weighted-mid",
+      "line": 75,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "bid-depth-from-asks",
+      "line": 82,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-into-asks",
+      "line": 105,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-proceeds-subtracted",
+      "line": 109,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-overfills",
+      "line": 104,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "buy-stop-at-zero",
+      "line": 91,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "below-includes-boundary",
+      "line": 32,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_pair_summing_to_exactly_one_is_not_below_one (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_pair_summing_to_exactly_one_is_not_below_one)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "one-cent-strict",
+      "line": 33,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_one_cent_either_side_of_one_counts_as_within_one_cent (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_one_cent_either_side_of_one_counts_as_within_one_cent)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "percentile-off-by-one",
+      "line": 30,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "maximum-is-minimum",
+      "line": 29,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "skip-empty-stats-check",
+      "line": 21,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "ERROR: test_a_pair_summing_to_exactly_one_is_not_below_one (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_pair_summing_to_exactly_one_is_not_below_one)",
+        "ERROR: test_one_cent_either_side_of_one_counts_as_within_one_cent (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_one_cent_either_side_of_one_counts_as_within_one_cent)",
+        "FAILED (errors=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "ignore-book-failure",
+      "line": 57,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "wrong-scanned-count",
+      "line": 59,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "one-sided-pair-sum",
+      "line": 60,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "gross-includes-zero",
+      "line": 66,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "count-nonexecutable",
+      "line": 68,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "reverse-profit-ranking",
+      "line": 79,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "wrong-survival-denominator",
+      "line": 90,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "binary-filter-and",
+      "line": 62,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "token-count-inverted",
+      "line": 62,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "outcome-count-inverted",
+      "line": 62,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "liquidity-strict-boundary",
+      "line": 64,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "liquidity-inverted",
+      "line": 64,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "cache-use-or",
+      "line": 42,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "ignore-book-refresh",
+      "line": 85,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "book-cache-off-by-one",
+      "line": 87,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "header-window-too-short",
+      "line": 37,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "header-window-too-long",
+      "line": 37,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "accept-missing-header",
+      "line": 43,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "reject-valid-header",
+      "line": 41,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "skip-tests",
+      "line": 28,
+      "status": "survived"
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "missing-header-success",
+      "line": 69,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/__main__.py",
+      "id": "verify-always-succeeds",
+      "line": 82,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/__main__.py",
+      "id": "verify-always-fails",
+      "line": 82,
+      "status": "killed",
+      "command": "python -m predarb verify",
+      "failures": []
+    }
+  ],
+  "after": [
+    {
+      "module": "src/predarb/arb.py",
+      "id": "negative-contract-fee",
+      "line": 22,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_negative_contract_count_has_no_fee"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "zero-contract-boundary",
+      "line": 22,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "fee-round-down",
+      "line": 29,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fee_rounds_up_to_the_cent (test_arb.TestFees.test_kalshi_fee_rounds_up_to_the_cent)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "fee-no-decimal-rounding",
+      "line": 29,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_kalshi_fee_matches_the_published_formula (test_arb.TestFees.test_kalshi_fee_matches_the_published_formula)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-zero-odds",
+      "line": 51,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_nonpositive_kelly_odds_have_no_stake[0]"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-negative-odds",
+      "line": 51,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_nonpositive_kelly_odds_have_no_stake[-2]"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "kelly-wrong-odds",
+      "line": 64,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_underpriced_contract_gets_a_positive_stake (test_arb.TestKelly.test_underpriced_contract_gets_a_positive_stake)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "missing-leg-and",
+      "line": 102,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "ERROR: test_missing_side_is_reported_not_crashed (test_arb.TestWithinVenueArbitrage.test_missing_side_is_reported_not_crashed)",
+        "FAILED (errors=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "ignore-size-cap",
+      "line": 108,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "max-depth",
+      "line": 108,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "zero-depth-boundary",
+      "line": 109,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_nonpositive_cap_has_no_depth[0] - A..."
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "ignore-fee-rate",
+      "line": 126,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_walked_pair_accounts_for_every_cost_and_the_cap",
+        "FAILED tests/test_arb_validation.py::test_fee_rate_can_turn_a_valid_pair_into_a_loss",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "omit-no-leg-fee",
+      "line": 128,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fees_are_applied (test_arb.TestWithinVenueArbitrage.test_kalshi_fees_are_applied)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "add-fees-to-profit",
+      "line": 133,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAIL: test_kalshi_fees_are_applied (test_arb.TestWithinVenueArbitrage.test_kalshi_fees_are_applied)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "omit-gas",
+      "line": 133,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_gas_can_eat_the_whole_edge (test_arb.TestWithinVenueArbitrage.test_gas_can_eat_the_whole_edge)",
+        "FAILED (failures=3)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "profit-strict-boundary",
+      "line": 139,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_of_exactly_the_minimum_is_executable (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_of_exactly_the_minimum_is_executable)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "accept-all-results",
+      "line": 139,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_profit_below_the_minimum_is_still_rejected (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_profit_below_the_minimum_is_still_rejected)",
+        "FAIL: test_a_market_priced_one_tick_wide_is_not_an_arbitrage (test_arb.TestEndToEndFromVenuePayload.test_a_market_priced_one_tick_wide_is_not_an_arbitrage)",
+        "FAIL: test_gas_can_eat_the_whole_edge (test_arb.TestWithinVenueArbitrage.test_gas_can_eat_the_whole_edge)",
+        "FAIL: test_no_arbitrage_when_the_pair_costs_more_than_one (test_arb.TestWithinVenueArbitrage.test_no_arbitrage_when_the_pair_costs_more_than_one)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=5)"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "net-edge-multiplied",
+      "line": 134,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_walked_pair_accounts_for_every_cost_and_the_cap"
+      ]
+    },
+    {
+      "module": "src/predarb/arb.py",
+      "id": "slippage-no-leg-subtracted",
+      "line": 132,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_arb_validation.py::test_slippage_adds_the_cost_of_walking_both_legs"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "reverse-asks",
+      "line": 33,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_asks_are_sorted_best_first_whatever_the_input_order (test_arb.TestOrderBookOrdering.test_asks_are_sorted_best_first_whatever_the_input_order)",
+        "FAIL: test_fill_across_levels_is_a_weighted_average (test_arb.TestWalkingTheBook.test_fill_across_levels_is_a_weighted_average)",
+        "FAIL: test_fill_inside_the_top_level_pays_the_top_price (test_arb.TestWalkingTheBook.test_fill_inside_the_top_level_pays_the_top_price)",
+        "FAIL: test_slippage_is_average_minus_best (test_arb.TestWalkingTheBook.test_slippage_is_average_minus_best)",
+        "FAIL: test_slippage_can_eat_the_edge (test_arb.TestWithinVenueArbitrage.test_slippage_can_eat_the_edge)",
+        "FAILED (failures=6)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "accept-negative-size",
+      "line": 42,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_parser_discards_negative_and_zero_sizes_on_both_sides"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "accept-zero-size",
+      "line": 42,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_zero_size_levels_are_dropped (test_arb.TestOrderBookOrdering.test_zero_size_levels_are_dropped)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "price-used-as-size",
+      "line": 41,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_detects_an_arbitrage_injected_as_a_raw_payload (test_arb.TestEndToEndFromVenuePayload.test_detects_an_arbitrage_injected_as_a_raw_payload)",
+        "FAIL: test_zero_size_levels_are_dropped (test_arb.TestOrderBookOrdering.test_zero_size_levels_are_dropped)",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "missing-size-default",
+      "line": 41,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_incomplete_or_nonnumeric_level_is_rejected[row0-KeyError]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "spread-added",
+      "line": 59,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_quotes_depth_and_weighted_mid_obey_the_selected_depth"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "mid-subtracted",
+      "line": 65,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_liquidity_weighted_mid_leans_to_the_deep_side (test_arb.TestWalkingTheBook.test_liquidity_weighted_mid_leans_to_the_deep_side)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "one-sided-spread",
+      "line": 56,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_one_sided_book_has_no_mid_or_spread[bids]",
+        "FAILED tests/test_book_execution.py::test_one_sided_book_has_no_mid_or_spread[asks]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "weighted-depth-off-by-one",
+      "line": 73,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_quotes_depth_and_weighted_mid_obey_the_selected_depth"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "empty-weighted-mid",
+      "line": 75,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_quotes_depth_and_weighted_mid_obey_the_selected_depth"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "bid-depth-from-asks",
+      "line": 82,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_quotes_depth_and_weighted_mid_obey_the_selected_depth",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[1-1-0.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[2-2-0.8]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[4-4-1.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[20-7-2.3]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-into-asks",
+      "line": 105,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[1-1-0.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[2-2-0.8]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[4-4-1.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[20-7-2.3]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-proceeds-subtracted",
+      "line": 109,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[1-1-0.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[2-2-0.8]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[4-4-1.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[20-7-2.3]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "sell-overfills",
+      "line": 104,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[1-1-0.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[4-4-1.4]",
+        "FAILED tests/test_book_execution.py::test_sell_walks_highest_bids_and_never_overfills[20-7-2.3]"
+      ]
+    },
+    {
+      "module": "src/predarb/book.py",
+      "id": "buy-stop-at-zero",
+      "line": 91,
+      "status": "survived"
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "below-includes-boundary",
+      "line": 32,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_a_pair_summing_to_exactly_one_is_not_below_one (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_pair_summing_to_exactly_one_is_not_below_one)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "one-cent-strict",
+      "line": 33,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "FAIL: test_one_cent_either_side_of_one_counts_as_within_one_cent (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_one_cent_either_side_of_one_counts_as_within_one_cent)",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "percentile-off-by-one",
+      "line": 30,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_distribution_values_and_percentile_rank"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "maximum-is-minimum",
+      "line": 29,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_distribution_values_and_percentile_rank"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "skip-empty-stats-check",
+      "line": 21,
+      "status": "killed",
+      "command": "python -m unittest discover -s tests -v",
+      "failures": [
+        "ERROR: test_a_pair_summing_to_exactly_one_is_not_below_one (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_a_pair_summing_to_exactly_one_is_not_below_one)",
+        "ERROR: test_one_cent_either_side_of_one_counts_as_within_one_cent (test_arb.TestBinaryFloatingPointAtTheBoundaries.test_one_cent_either_side_of_one_counts_as_within_one_cent)",
+        "FAILED (errors=2)"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "ignore-book-failure",
+      "line": 57,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "wrong-scanned-count",
+      "line": 59,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "one-sided-pair-sum",
+      "line": 60,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "gross-includes-zero",
+      "line": 66,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "count-nonexecutable",
+      "line": 68,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "reverse-profit-ranking",
+      "line": 79,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/scanner.py",
+      "id": "wrong-survival-denominator",
+      "line": 90,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0-0.01-2-True]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-False]",
+        "FAILED tests/test_scanner_pipeline.py::test_scan_counts_only_costed_opportunities_and_records_failures[0.02-1-1-True]"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "binary-filter-and",
+      "line": 62,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes0]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes1]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes2]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes3]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes4]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes5]"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "token-count-inverted",
+      "line": 62,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_binary_market_at_liquidity_threshold_is_accepted",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes0]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes1]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes2]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes3]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes4]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes5]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes6]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes7]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes8]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes9]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes10]",
+        "FAILED tests/test_market_validation.py::test_market_cache_can_be_read_and_explicitly_refreshed"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "outcome-count-inverted",
+      "line": 62,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_binary_market_at_liquidity_threshold_is_accepted",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes0]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes1]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes2]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes3]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes4]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes5]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes6]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes7]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes8]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes9]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes10]",
+        "FAILED tests/test_market_validation.py::test_market_cache_can_be_read_and_explicitly_refreshed"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "liquidity-strict-boundary",
+      "line": 64,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_binary_market_at_liquidity_threshold_is_accepted",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes0]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes1]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes2]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes3]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes4]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes5]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes6]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes7]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes8]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes9]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes10]",
+        "FAILED tests/test_market_validation.py::test_market_cache_can_be_read_and_explicitly_refreshed"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "liquidity-inverted",
+      "line": 64,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes9]",
+        "FAILED tests/test_market_validation.py::test_corrupted_or_illiquid_market_is_filtered[changes10]"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "cache-use-or",
+      "line": 42,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_binary_market_at_liquidity_threshold_is_accepted",
+        "FAILED tests/test_market_validation.py::test_market_cache_can_be_read_and_explicitly_refreshed"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "ignore-book-refresh",
+      "line": 85,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_book_cache_keys_and_refresh_preserve_the_payload"
+      ]
+    },
+    {
+      "module": "src/predarb/polymarket.py",
+      "id": "book-cache-off-by-one",
+      "line": 87,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_market_validation.py::test_book_cache_keys_and_refresh_preserve_the_payload"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "header-window-too-short",
+      "line": 37,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_header_is_accepted_in_first_five_lines[5]"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "header-window-too-long",
+      "line": 37,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[# preamble\\n# preamble\\n# preamble\\n# preamble\\n# preamble\\n# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary\\n]"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "accept-missing-header",
+      "line": 43,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[print('no header')\\n]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[# preamble\\n# preamble\\n# preamble\\n# preamble\\n# preamble\\n# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary\\n]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietar]",
+        "FAILED tests/test_spdx_checker.py::test_gate_status_follows_header_validity_and_fix_preserves_content"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "reject-valid-header",
+      "line": 41,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_header_is_accepted_in_first_five_lines[1]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[print('no header')\\n]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[# preamble\\n# preamble\\n# preamble\\n# preamble\\n# preamble\\n# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietary\\n]",
+        "FAILED tests/test_spdx_checker.py::test_missing_late_or_truncated_identifier_is_rejected[# SPDX-License-Identifier: LicenseRef-Leo-Y-Zhang-Proprietar]",
+        "FAILED tests/test_spdx_checker.py::test_gate_status_follows_header_validity_and_fix_preserves_content"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "skip-tests",
+      "line": 28,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_source_discovery_checks_tests_and_skips_generated_files",
+        "FAILED tests/test_spdx_checker.py::test_gate_status_follows_header_validity_and_fix_preserves_content"
+      ]
+    },
+    {
+      "module": "scripts/check_spdx.py",
+      "id": "missing-header-success",
+      "line": 69,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAILED tests/test_spdx_checker.py::test_gate_status_follows_header_validity_and_fix_preserves_content"
+      ]
+    },
+    {
+      "module": "src/predarb/__main__.py",
+      "id": "verify-always-succeeds",
+      "line": 82,
+      "status": "killed",
+      "command": "python -m pytest -q",
+      "failures": [
+        "FAIL: runTest (test_cli_verify.test_verify_exit_status_matches_the_test_result.<locals>.Probe.runTest)",
+        "FAILED (failures=1)",
+        "FAILED tests/test_cli_verify.py::test_verify_exit_status_matches_the_test_result[True]"
+      ]
+    },
+    {
+      "module": "src/predarb/__main__.py",
+      "id": "verify-always-fails",
+      "line": 82,
+      "status": "killed",
+      "command": "python -m predarb verify",
+      "failures": []
+    }
+  ]
+}
